@@ -1,0 +1,13 @@
+This layer contains recipes for the BugLabs middleware and specific OSGi components and depends on:
+
+URI: git://git.openembedded.org/openembedded-core
+branch: master
+revision: HEAD
+
+URI: git://github.com/woglinde/meta-java.git
+branch: master
+revision: HEAD
+
+It is recommended to follow the instruction at http://www.angstrom-distribution.org/building-angstrom
+
+Main layer maintainer: Stefan Schmidt <stefan@datenfreihafen.org>
