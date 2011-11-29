@@ -1,8 +1,8 @@
 DESCRIPTION = "PPP Scripts for BUG"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 RDEPENDS_${PN} = "udev"
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "file://att \
 	file://att_chat \
