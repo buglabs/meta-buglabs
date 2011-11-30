@@ -1,0 +1,29 @@
+DESCRIPTION = "Configuration files for online package repositories aka feeds"
+
+PR = "r0"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+FEED_BASEPATH = "buildbot/trunk/incremental/feeds/"
+
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
+
+do_compile() {
+	mkdir -p ${S}/${sysconfdir}/opkg
+
+	for feed in all armv7a bug20 ; do
+		  echo "src/gz dauber-${feed} http://dauber/${FEED_BASEPATH}${feed}" > ${S}/${sysconfdir}/opkg/dauber-${feed}-feed.conf
+	done
+}
+
+
+do_install () {
+	install -d ${D}${sysconfdir}/opkg
+	install -m 0644  ${S}/${sysconfdir}/opkg/* ${D}${sysconfdir}/opkg/
+}
+
+FILES_${PN} = "${sysconfdir}/opkg/"
+
+CONFFILES_${PN} += "${sysconfdir}/opkg/dauber-all-feed.conf \
+                    ${sysconfdir}/opkg/dauber-armv7a-feed.conf \
+                    ${sysconfdir}/opkg/dauber-bug20-feed.conf"
