@@ -1,0 +1,16 @@
+Index: git/python/py_bugv4l.c
+===================================================================
+--- git.orig/python/py_bugv4l.c	2011-11-30 14:03:36.928280484 +0100
++++ git/python/py_bugv4l.c	2011-11-30 14:13:38.596289513 +0100
+@@ -1,8 +1,8 @@
+ /* Python bindings to bug_vl4.c API */
+ 
+-#include <Python.h>
+-#include <structmember.h>
+-#include <bufferobject.h>
++#include <python2.7/Python.h>
++#include <python2.7/structmember.h>
++#include <python2.7/bufferobject.h>
+ #include <linux/videodev2.h>
+ #include "../bug_v4l.h"
+ 
